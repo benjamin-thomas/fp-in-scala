@@ -1,5 +1,9 @@
 /*
 
+scala-cli run --watch ./chapter01/listing_1.1/Cafe.scala
+
+---
+
 Example of a program demonstrating "hard to test" side effects:
 
 Examples of actions that could happen when charging:
@@ -23,7 +27,6 @@ class CreditCard:
 class Coffee:
   val price: Double = 2.0
 
-// scala-cli run --watch ./chapter01/listing_1.1/Cafe.sc
 object Main {
   def clearScreen(): Unit =
     print("\u001b[2J")
@@ -34,4 +37,5 @@ object Main {
     val cafe = Cafe()
     val cc = CreditCard()
     val cup = cafe.buyCoffee(cc)
+    printf("Enjoy your coffee! (price was: %.2f)\n", cup.price)
 }
